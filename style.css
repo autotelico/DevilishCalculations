@@ -1,0 +1,42 @@
+body 
+{
+    background-color: #ddd; 
+    font-family: Roboto;
+    font-size: 80px;
+    font-weight: 500;
+    color: #555;
+}
+
+.Calc
+{
+    width: 600px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    align-content: center;
+    height: 160px;
+}
+
+#Top
+{
+    background-color: #dcc;
+    overflow: auto;
+    
+}
+
+#Bottom
+{
+    background-color: #ccd;
+}
+
+#Top #Container
+{
+    
+    width: 600px;
+}
+
+.Calculation
+{
+    height: 80px;
+    padding: 40px;
+}

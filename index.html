@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Devilish Calculations</title>
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="Screen" id="Menu">
+
+        </div>
+        <div class="Screen" id="Game">
+            <div class="Calc" id="Top">
+                <div id="Container">
+                    <div class="Calculation"> 5 + 3 = 8 </div>
+                    <div class="Calculation" style="background-color: #0ff;"> 2 + 4 = 6 </div>
+                    <div class="Calculation"> 1 + 3 = 4 </div>   
+                </div>
+            </div>           
+            <div class="Calc" id="Bottom" >2 + 5 = 7</div>
+        </div>
+
+        <button OnClick="GoToNext()">hello</button>
+    
+    <script>
+        // Get a reference to your scroll box
+        const scrollBox = document.querySelector('#Top');
+
+        // Set the scroll position
+        scrollBox.scrollTop = 0; // vertical scroll, 100px from the top
+        
+        // Get the current scroll position
+        const currentVerticalScroll = scrollBox.scrollTop;
+
+        
+
+        function GoToNext()
+        {
+            $('#Top').animate({
+                scrollTop: 160  // the position you want to scroll to
+            }, 1000);
+        }
+        
+    </script>
+
+    </body>
+
+    
+</html>
