@@ -21,6 +21,11 @@
                     <div class="Calculation"> 5 + 3 = 8 </div>
                     <div class="Calculation" style="background-color: #0ff;"> 2 + 4 = 6 </div>
                     <div class="Calculation"> 1 + 3 = 4 </div>   
+                    <div class="Calculation" style="background-color: #0ff;"> 2 + 4 = 6 </div>
+                    <div class="Calculation"> 1 + 3 = 4 </div>   
+                    <div class="Calculation" style="background-color: #0ff;"> 2 + 4 = 6 </div>
+                    <div class="Calculation"> 1 + 3 = 4 </div>   
+                    <div class="Calculation" style="background-color: #0ff;"> 2 + 4 = 6 </div>
                 </div>
             </div>           
             <div class="Calc" id="Bottom" >
@@ -33,6 +38,7 @@
         </div>
 
         <button OnClick="GoToNext()">hello</button>
+        
     
     <script>
         // Get a reference to your scroll box
@@ -44,14 +50,58 @@
         // Get the current scroll position
         const currentVerticalScroll = scrollBox.scrollTop;
 
-        
+        let TopScroll = 0;
 
         function GoToNext()
         {
+            TopScroll += 160;
             $('#Top').animate({
-                scrollTop: 160  // the position you want to scroll to
+                scrollTop: TopScroll  // the position you want to scroll to
             }, 1000);
         }
+
+        document.addEventListener('keydown', function(event)
+        {
+            if (event.key === '0' || event.key === 'Numpad0')
+                alert('0 key was pressed.');
+            if (event.key === '1' || event.key === 'Numpad1')
+                alert('1 key was pressed.');
+            if (event.key === '2' || event.key === 'Numpad2')
+                alert('2 key was pressed.');
+            if (event.key === '3' || event.key === 'Numpad3')
+                alert('3 key was pressed.');
+            if (event.key === '4' || event.key === 'Numpad4')
+                alert('4 key was pressed.');
+            if (event.key === '5' || event.key === 'Numpad5')
+                alert('5 key was pressed.');
+            if (event.key === '6' || event.key === 'Numpad6')
+                alert('6 key was pressed.');
+            if (event.key === '7' || event.key === 'Numpad7')
+                alert('7 key was pressed.');
+            if (event.key === '8' || event.key === 'Numpad8')
+                alert('8 key was pressed.');
+            if (event.key === '9' || event.key === 'Numpad9')
+                alert('9 key was pressed.');
+            
+        });
+
+        function startTimer(durationInSeconds) {
+            let remainingTime = durationInSeconds;
+
+            const interval = setInterval(function() {
+                console.log(`Time left: ${remainingTime} seconds`);
+
+                remainingTime--;
+
+                if (remainingTime < 0) {
+                    clearInterval(interval);
+                    console.log("Timer finished!");
+                }
+            }, 1000);
+        }
+
+        // Start a timer for 10 seconds
+        startTimer(10);
         
     </script>
 

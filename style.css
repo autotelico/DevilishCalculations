@@ -20,7 +20,7 @@ body
 #Top
 {
     background-color: #dcc;
-    overflow: auto;
+    overflow: hidden;
     
 }
 
