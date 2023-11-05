@@ -39,9 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
     function setupProblems() {
+        let calculationDiv = document.createElement('div'); // Make containerTwo look empty when the game starts
+            calculationDiv.classList.add('Calculation');
+            calculationDiv.textContent = ``;
+        containerOne.appendChild(calculationDiv);
 
         for (let i = 0; i < 25; i++) {
-            let calculationDiv = document.createElement('div');
+            calculationDiv = document.createElement('div');
             calculationDiv.classList.add('Calculation');
             calculationDiv.textContent = `${numbersForProblems[i][0]} + ${numbersForProblems[i][1]} = ?`; // cabe função de guardar resultado aqui
 
@@ -49,12 +53,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         for (let i = 0; i < 25; i++) {
-            let calculationDiv = document.createElement('div');
+            calculationDiv = document.createElement('div');
             calculationDiv.classList.add('Calculation');
             calculationDiv.textContent = `${numbersForProblems[i][0]} + ${numbersForProblems[i][1]} = ?`; // cabe função de guardar resultado aqui
 
             containerTwo.appendChild(calculationDiv);
         }
+            calculationDiv = document.createElement('div'); // Make containerTwo look empty when the game starts
+            calculationDiv.classList.add('Calculation');
+            calculationDiv.textContent = ``;
+        containerTwo.appendChild(calculationDiv);
     }
 
     function storeResult(result) { // esquecido
