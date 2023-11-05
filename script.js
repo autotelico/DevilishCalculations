@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const currentVerticalScroll = scrollBox.scrollTop;
     
+    let currentProblemID = -1;
+    
     const numbersForProblems = [];
 
     generateProblem();
@@ -46,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
             calculationDiv.innerHTML = `&nbsp`;
         containerOne.appendChild(calculationDiv);
 
-        for (let i = 0; i < 25; i++) {
+        for (let i = 24; i >= 0; i--) {
             calculationDiv = document.createElement('div');
             calculationDiv.classList.add('Calculation');
             calculationDiv.textContent = `${numbersForProblems[i][0]} + ${numbersForProblems[i][1]} = ?`; // cabe função de guardar resultado aqui
@@ -54,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             containerOne.appendChild(calculationDiv);
         }
 
-        for (let i = 0; i < 25; i++) {
+        for (let i = 24; i >= 0; i--) {
             calculationDiv = document.createElement('div');
             calculationDiv.classList.add('Calculation');
             calculationDiv.textContent = `${numbersForProblems[i][0]} + ${numbersForProblems[i][1]} = ?`; // cabe função de guardar resultado aqui
@@ -63,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
             calculationDiv = document.createElement('div'); // Make containerTwo look empty when the game starts
             calculationDiv.classList.add('Calculation');
-            calculationDiv.innerHTML = `&nbsp;`;
+            calculationDiv.innerHTML = `&nbsp`;
         containerTwo.appendChild(calculationDiv);
     }
 
@@ -82,7 +84,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function validateAnswer(guess) {
-
+        if (currentProblemID >= 0) {
+            if (numbersForProblems[currentProblemID][0] + numbersForProblems[currentProblemID][1] === guess) {
+                console.log('Acertou');
+            } else {
+                console.log('Errou');
+            }
+        }
+        currentProblemID++;
         GoToNext();
     }
 
