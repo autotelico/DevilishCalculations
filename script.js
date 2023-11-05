@@ -59,8 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let i = 24; i >= 0; i--) {
             calculationDiv = document.createElement('div');
             calculationDiv.classList.add('Calculation');
-            calculationDiv.textContent = `${numbersForProblems[i][0]} + ${numbersForProblems[i][1]} = ?`; // cabe função de guardar resultado aqui
-
+            calculationDiv.id = "problem"+i;
+            //calculationDiv.textContent = `${numbersForProblems[i][0]} + ${numbersForProblems[i][1]} = ?`; // cabe função de guardar resultado aqui
+            calculationDiv.textContent = '? + ? = ?';
             containerTwo.appendChild(calculationDiv);
         }
             calculationDiv = document.createElement('div'); // Make containerTwo look empty when the game starts
@@ -85,6 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function validateAnswer(guess) {
         if (currentProblemID >= 0) {
+            
+            const currentProblemDiv = document.querySelector("#problem"+currentProblemID);
+            currentProblemDiv.textContent = `${numbersForProblems[currentProblemID][0]} + ${numbersForProblems[currentProblemID][1]} = ${guess}`; 
+
             if (numbersForProblems[currentProblemID][0] + numbersForProblems[currentProblemID][1] === guess) {
                 console.log('Acertou');
             } else {
