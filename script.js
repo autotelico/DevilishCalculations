@@ -9,9 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const scrollBox2 = document.querySelector('#Bottom');
 
     const currentVerticalScroll = scrollBox.scrollTop;
-    
+
+    const correctSound = document.querySelector('#correct-sound');
+    const wrongSound = document.querySelector('#wrong-sound');
+
     let currentProblemID = -1;
-    
+
     const numbersForProblems = [];
 
     generateProblem();
@@ -40,12 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    
+
 
     function setupProblems() {
         let calculationDiv = document.createElement('div'); // Make containerTwo look empty when the game starts
-            calculationDiv.classList.add('Calculation');
-            calculationDiv.innerHTML = `&nbsp`;
+        calculationDiv.classList.add('Calculation');
+        calculationDiv.innerHTML = `&nbsp`;
         containerOne.appendChild(calculationDiv);
 
         for (let i = 24; i >= 0; i--) {
@@ -63,9 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             containerTwo.appendChild(calculationDiv);
         }
-            calculationDiv = document.createElement('div'); // Make containerTwo look empty when the game starts
-            calculationDiv.classList.add('Calculation');
-            calculationDiv.innerHTML = `&nbsp`;
+        calculationDiv = document.createElement('div'); // Make containerTwo look empty when the game starts
+        calculationDiv.classList.add('Calculation');
+        calculationDiv.innerHTML = `&nbsp`;
         containerTwo.appendChild(calculationDiv);
     }
 
@@ -87,8 +90,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (currentProblemID >= 0) {
             if (numbersForProblems[currentProblemID][0] + numbersForProblems[currentProblemID][1] === guess) {
                 console.log('Acertou');
+                playCorrectSound();
             } else {
-                console.log('Errou'); 
+                console.log('Errou');
+                playWrongSound();
             }
         }
         currentProblemID++;
@@ -121,6 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
     function startTimer(durationInSeconds) {
         let remainingTime = durationInSeconds;
 
@@ -138,4 +145,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     startTimer(200);
 
+    function playCorrectSound() {
+        correctSound.play();
+    }
+
+    function playWrongSound() {
+        wrongSound.play();
+    }
 })
