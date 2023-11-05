@@ -71,3 +71,28 @@ body
     margin: 0 20px;
     padding-bottom: 20px;
 }
+
+.modal-content p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content p button {
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    background: peachpuff;
+    color: #333;
+    font-size: 0.4em;
+    font-family: Roboto;
+    padding: 10px 30px;
+    transition: 0.2s all;
+    border-bottom: solid rgb(230, 140, 90) 5px;
+}
+
+.modal-content p button:hover {
+    background-color:rgb(255, 172, 114);
+    border-bottom: solid rgb(230, 140, 90) 10px;
+    color: #fff;
+}

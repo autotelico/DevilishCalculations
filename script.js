@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const containerOne = document.querySelector('#Container01');
     const containerTwo = document.querySelector('#Container02');
 
-    let GameLevel = 2;
+    let GameLevel = prompt('Select level: ');
     let TopScroll = 3840 + GameLevel * 160;
 
     const scrollBox = document.querySelector('#Top');
