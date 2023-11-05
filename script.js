@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const containerOne = document.querySelector('#Container01');
     const containerTwo = document.querySelector('#Container02');
 
-    let GameLevel = 4;
+    let GameLevel = 2;
     let TopScroll = 3840 + GameLevel * 160;
 
     const scrollBox = document.querySelector('#Top');
@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const wrongSound = document.querySelector('#wrong-sound');
 
     let currentProblemID = -GameLevel;
+
+    let correctGuesses = 0; 
+    let wrongGuesses = 0; 
 
     const numbersForProblems = [];
 
@@ -86,13 +89,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function GoToNext() {
-        TopScroll -= 160;
-        $('#Top').animate({
-            scrollTop: TopScroll  // the position you want to scroll to
-        }, 1000);
-        $('#Bottom').animate({
-            scrollTop: TopScroll  // the position you want to scroll to
-        }, 1000);
+        if(TopScroll == 0)
+        {
+            $('.modal').css("display", "block");
+            const correctGuessesDiv = document.querySelector('#CorrectGuesses');
+            const wrongGuessesDiv = document.querySelector('#WrongGuesses');
+            correctGuessesDiv.innerHTML = correctGuesses;
+            wrongGuessesDiv.innerHTML = wrongGuesses;
+        }
+        else
+        {
+            TopScroll -= 160;
+            $('#Top').animate({
+                scrollTop: TopScroll  // the position you want to scroll to
+            }, 1000);
+            $('#Bottom').animate({
+                scrollTop: TopScroll  // the position you want to scroll to
+            }, 1000);
+        }
     }
 
     function validateAnswer(guess) {
@@ -106,10 +120,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log('Acertou');
                 $('#answer'+currentProblemID).css("color", "green");
                 playCorrectSound();
+                correctGuesses++;
             } else {
                 console.log('Errou');
                 $('#answer'+currentProblemID).css("color", "red");
                 playWrongSound();
+                wrongGuesses++;
             }
         }
         currentProblemID++;
