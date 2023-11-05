@@ -28,17 +28,27 @@
             </div>
         </div>
         
-        <div id="Timer" style="position: absolute; right: 0px; top: 0; width: 100px; background-color: #444; color: #eee; font-size: 20px; padding: 10px;"> 
-            &nbsp;
-        </div>
+        <div class="modal" style="display:none">
+            <div id="Timer" style="position: absolute; right: 0px; top: 0; width: 100px; background-color: #444; color: #eee; font-size: 20px; padding: 10px;"> 
+                &nbsp;
+            </div>
 
+            <div class="modal-bg">
+            </div>
+
+            <div class="modal-content">
+                <p style="font-size: 30px;" align="center">SCORE</p>
+                <div style="color: #080">5</div> <div style="color: #b00">8</div>
+            </div>
+        </div>  
+
+       
         <audio id="correct-sound">
             <source src="./sounds/correct-answer-sfx.mp3" type="audio/mpeg">
         </audio>
         <audio id="wrong-sound">
             <source src="./sounds/wrong-answer-sfx.mp3" type="audio/mpeg">
-        </audio>
-        
+        </audio>       
     </body>
 
     

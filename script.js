@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const containerOne = document.querySelector('#Container01');
     const containerTwo = document.querySelector('#Container02');
 
-    let TopScroll = 4000;
+    let GameLevel = 4;
+    let TopScroll = 3840 + GameLevel * 160;
 
     const scrollBox = document.querySelector('#Top');
     const scrollBox2 = document.querySelector('#Bottom');
@@ -13,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const correctSound = document.querySelector('#correct-sound');
     const wrongSound = document.querySelector('#wrong-sound');
 
-    let currentProblemID = -1;
+    let currentProblemID = -GameLevel;
 
     const numbersForProblems = [];
 
@@ -46,10 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     function setupProblems() {
-        let calculationDiv = document.createElement('div'); // Make containerTwo look empty when the game starts
-        calculationDiv.classList.add('Calculation');
-        calculationDiv.innerHTML = `&nbsp`;
-        containerOne.appendChild(calculationDiv);
+
+        for(let i = 0; i < GameLevel; i++)
+        {
+            let calculationDiv = document.createElement('div'); // Make containerTwo look empty when the game starts
+            calculationDiv.classList.add('Calculation');
+            calculationDiv.innerHTML = `&nbsp`;
+            containerOne.appendChild(calculationDiv);
+        }
 
         for (let i = 24; i >= 0; i--) {
             calculationDiv = document.createElement('div');
@@ -67,10 +72,13 @@ document.addEventListener("DOMContentLoaded", () => {
             calculationDiv.textContent = '? + ? = ?';
             containerTwo.appendChild(calculationDiv);
         }
-        calculationDiv = document.createElement('div'); // Make containerTwo look empty when the game starts
-        calculationDiv.classList.add('Calculation');
-        calculationDiv.innerHTML = `&nbsp`;
-        containerTwo.appendChild(calculationDiv);
+        for(let i = 0; i < GameLevel; i++)
+        {
+            calculationDiv = document.createElement('div'); // Make containerTwo look empty when the game starts
+            calculationDiv.classList.add('Calculation');
+            calculationDiv.innerHTML = `&nbsp`;
+            containerTwo.appendChild(calculationDiv);
+        }
     }
 
     function storeResult(result) { // esquecido
@@ -91,13 +99,16 @@ document.addEventListener("DOMContentLoaded", () => {
         if (currentProblemID >= 0) {
             
             const currentProblemDiv = document.querySelector("#problem"+currentProblemID);
-            currentProblemDiv.textContent = `${numbersForProblems[currentProblemID][0]} + ${numbersForProblems[currentProblemID][1]} = ${guess}`; 
+
+            currentProblemDiv.innerHTML = `${numbersForProblems[currentProblemID][0]} + ${numbersForProblems[currentProblemID][1]} =<span id="answer${currentProblemID}"> ${guess} </span>`; 
 
             if (numbersForProblems[currentProblemID][0] + numbersForProblems[currentProblemID][1] === guess) {
                 console.log('Acertou');
+                $('#answer'+currentProblemID).css("color", "green");
                 playCorrectSound();
             } else {
                 console.log('Errou');
+                $('#answer'+currentProblemID).css("color", "red");
                 playWrongSound();
             }
         }
