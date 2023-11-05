@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const currentVerticalScroll = scrollBox.scrollTop;
 
+    const bgMusic = document.querySelector('#bg-music');
+    let songIsPlaying = false;
     const correctSound = document.querySelector('#correct-sound');
     const wrongSound = document.querySelector('#wrong-sound');
 
@@ -135,29 +137,41 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener('keydown', function (event) {
         if (event.key === '0' || event.key === 'Numpad0')
             validateAnswer(0);
+            songIsPlaying = true;
         if (event.key === '1' || event.key === 'Numpad1')
             validateAnswer(1);
+            songIsPlaying = true;
         if (event.key === '2' || event.key === 'Numpad2')
             validateAnswer(2);
+            songIsPlaying = true;
         if (event.key === '3' || event.key === 'Numpad3')
             validateAnswer(3);
+            songIsPlaying = true;
         if (event.key === '4' || event.key === 'Numpad4')
             validateAnswer(4);
+            songIsPlaying = true;
         if (event.key === '5' || event.key === 'Numpad5')
             validateAnswer(5);
+            songIsPlaying = true;
         if (event.key === '6' || event.key === 'Numpad6')
             validateAnswer(6);
+            songIsPlaying = true;
         if (event.key === '7' || event.key === 'Numpad7')
             validateAnswer(7);
+            songIsPlaying = true;
         if (event.key === '8' || event.key === 'Numpad8')
             validateAnswer(8);
+            songIsPlaying = true;
         if (event.key === '9' || event.key === 'Numpad9')
             validateAnswer(9);
+            songIsPlaying = true;
 
-    });
-
-
-
+        if (songIsPlaying) {
+            bgMusic.play();
+            bgMusic.volume = 0.6;
+        }
+        }
+);
 
 
     function startTimer(durationInSeconds) {
