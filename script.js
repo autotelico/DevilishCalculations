@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (numbersForProblems[currentProblemID][0] + numbersForProblems[currentProblemID][1] === guess) {
                 console.log('Acertou');
             } else {
-                console.log('Errou');
+                console.log('Errou'); 
             }
         }
         currentProblemID++;
