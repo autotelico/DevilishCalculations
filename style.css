@@ -70,6 +70,7 @@ body
     display: inline-block;
     margin: 0 20px;
     padding-bottom: 20px;
+    text-shadow: #ddd 5px 5px 5px;
 }
 
 .modal-content p {
@@ -83,7 +84,7 @@ body
     border-radius: 10px;
     border: none;
     background: peachpuff;
-    color: #333;
+    color: rgb(179, 100, 58);
     font-size: 0.4em;
     font-family: Roboto;
     padding: 10px 30px;
@@ -93,6 +94,6 @@ body
 
 .modal-content p button:hover {
     background-color:rgb(255, 172, 114);
-    border-bottom: solid rgb(230, 140, 90) 10px;
+    border-bottom: solid rgb(230, 140, 90) 19px;
     color: #fff;
 }
