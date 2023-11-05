@@ -1,58 +1,61 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Math-N-Back</title>
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
 
-        <link rel="stylesheet" href="style.css">
+<head>
+    <title>Math-N-Back</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-        <script src="script.js"></script>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    </head>
-    <body>
-       <h1>Math-N-Back</h1>
-        <div class="Screen" id="Menu">
+    <link rel="stylesheet" href="style.css">
 
-        </div>
-        <div class="Screen" id="Game">
-            <div class="Calc" id="Top">
-                <div class="Container" id="Container01"> 
-                </div>
-            </div>
-            <div class="Calc" id="Bottom">
-                <div class="Container" id="Container02">
-                </div>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>Math-N-Back</h1>
+    <div class="Screen" id="Menu">
+
+    </div>
+    <div class="Screen" id="Game">
+        <div class="Calc" id="Top">
+            <div class="Container" id="Container01">
             </div>
         </div>
-        
-        <div class="modal">
-            <div id="Timer"> 
-                &nbsp;
+        <div class="Calc" id="Bottom">
+            <div class="Container" id="Container02">
             </div>
+        </div>
+    </div>
 
-            <div class="modal-bg">
-            </div>
+    <div class="modal">
+        <div id="Timer">
+            &nbsp;
+        </div>
 
-            <div class="modal-content">
-                <p style="font-size: 30px;" align="center">SCORE</p>
-                <div style="color: #080" id="CorrectGuesses">5</div> <div style="color: #b00" id="WrongGuesses">8</div>
-                <p><button id="play-again" onclick="location.reload()">Play Again</button></p>
-            </div>
-        </div>  
+        <div class="modal-bg">
+        </div>
 
-        <audio id="bg-music">
-            <source src="./sounds/background-music-chill.mp3" type="audio/mpeg">
-        </audio>
-        <audio id="correct-sound">
-            <source src="./sounds/correct-answer-sfx.mp3" type="audio/mpeg">
-        </audio>
-        <audio id="wrong-sound">
-            <source src="./sounds/wrong-answer-sfx.mp3" type="audio/mpeg">
-        </audio>     
-    </body>
+        <div class="modal-content">
+            <p style="font-size: 30px;" align="center">SCORE</p>
+            <div style="color: #080" id="CorrectGuesses">5</div>
+            <div style="color: #b00" id="WrongGuesses">8</div>
+            <p><button id="play-again" onclick="location.reload()">Play Again</button></p>
+        </div>
+    </div>
 
-    
+    <audio id="bg-music">
+        <source src="./sounds/background-music-chill.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="correct-sound">
+        <source src="./sounds/correct-answer-sfx.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="wrong-sound">
+        <source src="./sounds/wrong-answer-sfx.mp3" type="audio/mpeg">
+    </audio>
+</body>
+
 </html>
