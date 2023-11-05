@@ -7,6 +7,14 @@ body
     color: #555;
 }
 
+h1 
+{
+    font-size: 1em;
+    text-align: center;
+    color: rgba(202, 199, 187, 0.568);
+    text-shadow: 2px 2px 1px #fff;
+}
+
 .Calc
 {
     width: 600px;
