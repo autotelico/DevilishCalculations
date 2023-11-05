@@ -16,4 +16,10 @@ On the upper box, a new problem is presented, while the lower box has anonymized
 
 You must input the correct answer to the PREVIOUS problem (Problem 1), while remembering the result from your current problem (Problem 2).
 
+You, then, input 5:
+
+![image](https://github.com/autotelico/Math-N-Back/assets/44820991/45afb1dc-befa-4c2f-89d9-77e378961af1)
+
+And you score! Remember that the higher the level, the more problems back you have to memorize.
+
 Can you successfully solve all 25 exercises? 💡
