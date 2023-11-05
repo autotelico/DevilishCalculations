@@ -36,8 +36,8 @@ function setupProblems(problems) {
 console.log(problemsToSolve);
 
 function generateProblem() {
-    doisNumeros = generateTwoNumbers();
-    problemsToSolve = doisNumeros.push(generateTwoNumbers());
+    twoNumbers = generateTwoNumbers();
+    problemsToSolve = twoNumbers.push(generateTwoNumbers());
 }
 
 
