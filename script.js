@@ -1,48 +1,45 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-function gerarAlgarismo(max) {
+    const containerOne = document.querySelector('#Container01');
+    const containerTwo = document.querySelector('#Container02');
+    
+
+function generateDigit(max) {
     return Math.floor(Math.random() * (max + 1));
 }
 
-function gerarDoisNumeros() {
-    let valorUm = gerarAlgarismo(9);
-    let valorDois = gerarAlgarismo(9 - valorUm);
-    return [valorUm, valorDois];
+function generateTwoNumbers() {
+    let valueOne = generateDigit(9);
+    let valueTwo = generateDigit(9 - valueOne);
+    return [valueOne, valueTwo];
 }
 
-const contasAResolver = [];
+const problemsToSolve = [];
 
-function gerarContas() {
+function generateProblem() {
 for (let i = 0; i < 25; i++) {
-    let numerosACalcular = gerarDoisNumeros();
-    contasAResolver.push(numerosACalcular);    
+    let numbersToCalculate = generateTwoNumbers();
+    problemsToSolve.push(numbersToCalculate);    
 }
 }
 
-// i + j = resultado
-// contasa
+// j0 + j1 = resultado
+// problems
 
-function exibirContas(contas) {
+function setupProblems(problems) {
     for (let i = 0; i < 25; i++) {
-        //console.log(contasAResolver[i][0] + '+' + contasAResolver[i][1] + "=");
-        let readableName = "";
-        let sum = 0;
-        for (let j = 0; j <= 1; j++) {
-            readableName += contasAResolver[i][0];
-            readableName += j==0? " + " : " = ";
-            sum += contasAResolver[i][0];
-        }
+        containerOne.appendChild()
+        (problemsToSolve[i][0] + '+' + problemsToSolve[i][1] + "=");
     }
 }
 
-console.log(contasAResolver);
+console.log(problemsToSolve);
 
-function gerarContas() {
-    doisNumeros = gerarDoisNumeros();
-    contasAResolver = doisNumeros.push(gerarDoisNumeros());
+function generateProblem() {
+    doisNumeros = generateTwoNumbers();
+    problemsToSolve = doisNumeros.push(generateTwoNumbers());
 }
 
-console.log(valor1);
-console.log(valor2);
+
 
 })
