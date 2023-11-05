@@ -2,21 +2,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const containerOne = document.querySelector('#Container01');
     const containerTwo = document.querySelector('#Container02');
-    
+
+    let TopScroll = 4000;
+
     const scrollBox = document.querySelector('#Top');
-    scrollBox.scrollTop = 1280;
     const scrollBox2 = document.querySelector('#Bottom');
-    scrollBox2.scrollTop = 1280;
 
     const currentVerticalScroll = scrollBox.scrollTop;
-
-    let TopScroll = 1280;
-
+    
     const numbersForProblems = [];
 
     generateProblem();
     console.log(numbersForProblems);
     setupProblems();
+
+
+    scrollBox.scrollTop = TopScroll;
+    scrollBox2.scrollTop = TopScroll;
 
     function generateDigit(max) {
         return Math.floor(Math.random() * (max + 1));
@@ -41,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function setupProblems() {
         let calculationDiv = document.createElement('div'); // Make containerTwo look empty when the game starts
             calculationDiv.classList.add('Calculation');
-            calculationDiv.textContent = ``;
+            calculationDiv.innerHTML = `&nbsp`;
         containerOne.appendChild(calculationDiv);
 
         for (let i = 0; i < 25; i++) {
@@ -61,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
             calculationDiv = document.createElement('div'); // Make containerTwo look empty when the game starts
             calculationDiv.classList.add('Calculation');
-            calculationDiv.textContent = ``;
+            calculationDiv.innerHTML = `&nbsp;`;
         containerTwo.appendChild(calculationDiv);
     }
 
