@@ -1,6 +1,6 @@
 body 
 {
-    background-color: #ddd; 
+    background-color: #568;
     font-family: Roboto;
     font-size: 80px;
     font-weight: 500;
@@ -20,16 +20,17 @@ body
 #Top
 {
     background-color: #dcc;
-    overflow: hidden;
+    overflow: auto;
     
 }
 
 #Bottom
 {
     background-color: #ccd;
+    overflow: auto;
 }
 
-#Top #Container
+#Top .Container
 {
     
     width: 600px;
