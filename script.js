@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const numbersForProblems = [];
 
     if (GameLevel <= 0) {
-        levelCorrector();
+        levelCorrector(GameLevel);
     }
 
     generateProblem();
@@ -92,10 +92,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    function levelCorrector() {
+    function levelCorrector(level) {
         do {
-            GameLevel = prompt('Select level: ', 1);
-        } while (GameLevel <= 0)
+            level = prompt('Select level: ', 1);
+        } while (level <= 0)
     }
 
     function GoToNext() {
