@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const containerOne = document.querySelector('#Container01');
     const containerTwo = document.querySelector('#Container02');
 
-    let GameLevel = prompt('Select level: ');
+    let GameLevel = prompt('Select level: ', 1);
     let TopScroll = 3840 + GameLevel * 160;
 
     const scrollBox = document.querySelector('#Top');
@@ -23,6 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const numbersForProblems = [];
 
+    if (GameLevel <= 0) {
+        levelCorrector();
+    }
+
     generateProblem();
     console.log(numbersForProblems);
     setupProblems();
@@ -30,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     scrollBox.scrollTop = TopScroll;
     scrollBox2.scrollTop = TopScroll;
+
 
     function generateDigit(max) {
         return Math.floor(Math.random() * (max + 1));
@@ -86,8 +91,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function storeResult(result) { // esquecido
 
+    function levelCorrector() {
+        do {
+            GameLevel = prompt('Select level: ', 1);
+        } while (GameLevel <= 0)
     }
 
     function GoToNext() {
