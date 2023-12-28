@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const containerOne = document.querySelector('#Container01');
     const containerTwo = document.querySelector('#Container02');
 
-    let GameLevel = prompt('Select level: ', 1);
+    let GameLevel = 1;
     let TopScroll = 3840 + GameLevel * 160;
 
     const scrollBox = document.querySelector('#Top');
@@ -23,6 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const numbersForProblems = [];
 
+    const playAgainBtn = document.querySelector('#play-again');
+
     if (GameLevel <= 0) {
         levelCorrector(GameLevel);
     }
@@ -35,6 +37,21 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollBox.scrollTop = TopScroll;
     scrollBox2.scrollTop = TopScroll;
 
+    function reloadGame() {
+        GameLevel = setLevel();
+        
+    }
+
+    function setLevel(playerScore) {
+        let currentLevel = 1;
+        if (playerScore >= 17) {
+            currentLevel++;
+        }
+        if (playerScore < 17) {
+            currentLevel--;
+        }
+        return currentLevel;
+    }
 
     function generateDigit(max) {
         return Math.floor(Math.random() * (max + 1));
@@ -206,4 +223,16 @@ document.addEventListener("DOMContentLoaded", () => {
     function playWrongSound() {
         wrongSound.play();
     }
+
+
+    document.addEventListener("beforeunload", (event) => {
+        event.preventDefault();
+        alert('Like the game? Give a 🌟 STAR on GitHub! That will help a lot. :)');
+        event.returnValue = true;
+    })
+
+    playAgainBtn.addEventListener('click', () => {
+        reloadGame();
+        console.log(`You ran reloadGame()`);
+    })
 })
