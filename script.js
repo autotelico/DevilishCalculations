@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const currentVerticalScroll = scrollBox.scrollTop;
 
-    const bgMusic = document.querySelector('#bg-music');
+    const bgMusic = new Audio('./sounds/background-music-chill.mp3')
     let songIsPlaying = false;
-    const correctSound = document.querySelector('#correct-sound');
-    const wrongSound = document.querySelector('#wrong-sound');
+    const correctSound = new Audio('./sounds/correct-answer-sfx.mp3')
+    const wrongSound = new Audio('./sounds/wrong-answer-sfx.mp3')
 
     let currentProblemID = -GameLevel;
 
