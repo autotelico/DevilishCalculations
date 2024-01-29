@@ -1,125 +1,117 @@
-body 
-{
-    background-color: #568;
-    font-family: Roboto;
-    font-size: 80px;
-    font-weight: 500;
-    color: #555;
+body {
+  background-color: #568;
+  font-family: Roboto;
+  font-size: 80px;
+  font-weight: 500;
+  color: #555;
 }
 
-h1 
-{
-    font-size: 1em;
-    text-align: center;
-    color: rgba(202, 199, 187, 0.568);
-    text-shadow: 2px 2px 1px #fff;
+h1 {
+  font-size: 1em;
+  text-align: center;
+  color: rgba(202, 199, 187, 0.568);
+  text-shadow: 2px 2px 1px #fff;
 }
 
-.Calc
-{
-    width: 600px;
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-    align-content: center;
-    height: 160px;
+.Calc {
+  width: 600px;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  align-content: center;
+  height: 160px;
 }
 
-#Top
-{
-    background-color: #dcc;
-    overflow: hidden;
-    
+#Top {
+  background-color: #dcc;
+  overflow: hidden;
 }
 
-#Bottom
-{
-    background-color: #ccd;
-    overflow: hidden;
+#Top .Container {
+  width: 600px;
 }
 
-#Top .Container
-{
-    
-    width: 600px;
+#Bottom {
+  background-color: #ccd;
+  overflow: hidden;
 }
 
 
-.Calculation
-{
-    height: 80px;
-    padding: 40px;
+.Calculation {
+  height: 80px;
+  padding: 40px;
 }
 
-.modal-bg
-{
-    background-color: #000;
-    opacity: 0.5;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.modal-bg {
+  background-color: #000;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.modal-content
-{
-    position: fixed;
-    background-color: #fff;
-    top: 50%;
-    left: 50%;
-    transform:translate(-50%, -50%);
-    padding: 10px 80px;
-    border-radius: 15px;
-    box-sizing: border-box;
-    height: 4;
-    min-height: 20px;
+.modal-content {
+  position: fixed;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 80px;
+  border-radius: 15px;
+  box-sizing: border-box;
+  height: 4;
+  min-height: 20px;
 }
 
-.modal-content div
-{
-    display: inline-block;
-    margin: 0 20px;
-    padding-bottom: 20px;
-    text-shadow: #ddd 5px 5px 5px;
+.modal-content div {
+  display: inline-block;
+  margin: 0 20px;
+  padding-bottom: 20px;
+  text-shadow: #ddd 5px 5px 5px;
 }
 
 .modal-content p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-content p button {
-    cursor: pointer;
-    border-radius: 10px;
-    border: none;
-    background: peachpuff;
-    color: rgb(179, 100, 58);
-    font-size: 0.4em;
-    font-family: Roboto;
-    padding: 10px 30px;
-    transition: 0.2s all;
-    border-bottom: solid rgb(230, 140, 90) 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  background: peachpuff;
+  color: rgb(179, 100, 58);
+  font-size: 0.4em;
+  font-family: Roboto;
+  padding: 10px 30px;
+  transition: 0.2s all;
+  border-bottom: solid rgb(230, 140, 90) 5px;
 }
 
 .modal-content p button:hover {
-    background-color:rgb(255, 172, 114);
-    border-bottom: solid rgb(230, 140, 90) 19px;
-    color: #fff;
+  background-color: rgb(255, 172, 114);
+  border-bottom: solid rgb(230, 140, 90) 19px;
+  color: #fff;
 }
 
 .modal {
-    display: none;
+  display: none;
 }
 
 .Timer {
-    position: absolute; 
-    right: 0px; 
-    top: 0; 
-    width: 100px; 
-    background-color: #444; 
-    color: #eee; 
-    font-size: 20px; 
-    padding: 10px;
+  position: absolute;
+  right: 0px;
+  top: 0;
+  width: 100px;
+  background-color: #444;
+  color: #eee;
+  font-size: 20px;
+  padding: 10px;
+}
+
+#instruction {
+    font-size: 30px;
 }
